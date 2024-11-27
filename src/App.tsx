@@ -1,17 +1,29 @@
+import { useState } from "react";
 import Card from "./components/Card";
+import Container from "./components/Container";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import { CardCollections } from "./utils";
+import Timer from "./components/Timer";
 
 function App() {
+  const [cards, setCards] = useState(CardCollections);
   return (
     <>
-      <h1 className="bg-red-500">Hello</h1>
-      <Card
-        metadata={{
-          title: "asd",
-          description: "lorem5 ",
-        }}
-      >
-        asd
-      </Card>
+      <Container>
+        <Header />
+        <div className="mt-20">
+          <div className="mt-10 text-center font-mono font-bold text-xl">
+            <Timer />
+          </div>
+          <div className="p-2 my-5 grid grid-cols-4 gap-2 justify-self-center place-items-center">
+            {cards.map(() => (
+              <Card />
+            ))}
+          </div>
+        </div>
+        <Footer />
+      </Container>
     </>
   );
 }

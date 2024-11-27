@@ -1,16 +1,27 @@
-import { ReactNode } from "react";
+import { useState } from "react";
+import BackCard from "../assets/back-cover-2.jpg";
+import Astro from "../assets/cards/astro.jpg";
 
-interface CardProps {
-  metadata: { title: ReactNode; description?: string };
-  children?: ReactNode;
-}
-
-const Card: React.FC<CardProps> = ({ metadata, children }) => {
+const Card: React.FC = () => {
+  const [open, setOpen] = useState<boolean>(false);
+  if (open) {
+    setTimeout(() => {
+      setOpen(false);
+    }, 500);
+  }
   return (
-    <div className="w-52 aspect-square rounded-xl bg-slate-500">
-      {metadata.title}
-      <p>{metadata.description}</p>
-      {children}
+    <div
+      onClick={() => setOpen(!open)}
+      className={`relative w-32 aspect-[3/4] cursor-pointer [transform-style:preserve-3d] transition-all duration-300 ${
+        open ? "[transform:rotateY(180deg)]" : "hover:scale-105"
+      }`}
+    >
+      <div className="w-full h-full bg-blue-50 absolute [backface-visibility:hidden]">
+        <img src={BackCard} alt="" />
+      </div>
+      <div className="w-full h-full bg-blue-50">
+        <img src={Astro} alt="" />
+      </div>
     </div>
   );
 };
