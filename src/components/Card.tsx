@@ -1,26 +1,25 @@
-import { useState } from "react";
 import BackCard from "../assets/back-cover-2.jpg";
-import Astro from "../assets/cards/astro.jpg";
 
-const Card: React.FC = () => {
-  const [open, setOpen] = useState<boolean>(false);
-  if (open) {
-    setTimeout(() => {
-      setOpen(false);
-    }, 500);
-  }
+interface CardProps {
+  image: string;
+
+  open: boolean;
+  onClick: () => void;
+}
+
+const Card: React.FC<CardProps> = ({ image, open, onClick }) => {
   return (
     <div
-      onClick={() => setOpen(!open)}
+      onClick={onClick}
       className={`relative w-32 aspect-[3/4] cursor-pointer [transform-style:preserve-3d] transition-all duration-300 ${
         open ? "[transform:rotateY(180deg)]" : "hover:scale-105"
       }`}
     >
-      <div className="w-full h-full bg-blue-50 absolute [backface-visibility:hidden]">
+      <div className="w-full h-full bg-blue-50 absolute">
         <img src={BackCard} alt="" />
       </div>
-      <div className="w-full h-full bg-blue-50">
-        <img src={Astro} alt="" />
+      <div className="w-full h-full bg-blue-50 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+        <img src={image} alt="" />
       </div>
     </div>
   );
