@@ -2,7 +2,6 @@ import BackCard from "../assets/back-cover-2.jpg";
 
 interface CardProps {
   image: string;
-
   open: boolean;
   onClick: () => void;
 }
@@ -11,7 +10,7 @@ const Card: React.FC<CardProps> = ({ image, open, onClick }) => {
   return (
     <div
       onClick={onClick}
-      className={`relative w-32 aspect-[3/4] cursor-pointer [transform-style:preserve-3d] transition-all duration-300 ${
+      className={`relative w-max-32 aspect-[3/4] cursor-pointer [transform-style:preserve-3d] transition-all duration-300 ${
         open ? "[transform:rotateY(180deg)]" : "hover:scale-105"
       }`}
     >
