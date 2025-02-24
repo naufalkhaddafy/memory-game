@@ -1,15 +1,15 @@
-import Astro from "./assets/cards/astro.jpg";
-import Bootstrap from "./assets/cards/bootstrap.jpg";
-import Css from "./assets/cards/css.jpg";
-import Html from "./assets/cards/html.jpg";
-import Js from "./assets/cards/js.jpg";
-import React from "./assets/cards/react.jpg";
-import Laravel from "./assets/cards/laravel.jpg";
-import Vue from "./assets/cards/vue.jpg";
-import Svelte from "./assets/cards/svelte.jpg";
-import Tailwind from "./assets/cards/tailwind.jpg";
-import Vite from "./assets/cards/vite.jpg";
-import Vscode from "./assets/cards/vscode.jpg";
+import Astro from "../assets/cards/astro.jpg";
+import Bootstrap from "../assets/cards/bootstrap.jpg";
+import Css from "../assets/cards/css.jpg";
+import Html from "../assets/cards/html.jpg";
+import Js from "../assets/cards/js.jpg";
+import React from "../assets/cards/react.jpg";
+import Laravel from "../assets/cards/laravel.jpg";
+import Vue from "../assets/cards/vue.jpg";
+import Svelte from "../assets/cards/svelte.jpg";
+import Tailwind from "../assets/cards/tailwind.jpg";
+import Vite from "../assets/cards/vite.jpg";
+import Vscode from "../assets/cards/vscode.jpg";
 
 export interface ICardInfo {
   open: boolean;
